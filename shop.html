@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collection | ZENVRA</title>
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        zenvra: {
+                            50: '#f9f9f9',
+                            100: '#f0f0f0',
+                            800: '#2c2c2c',
+                            900: '#111111',
+                            gold: '#C5A059'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-zenvra-900 font-sans antialiased overflow-x-hidden selection:bg-zenvra-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                <img src="assets/images/zenvra_logo_1773592784141.png" alt="ZENVRA Logo" class="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-medium text-sm uppercase tracking-widest text-gray-700">
+                <a href="index.html" class="nav-link hover:text-black">Home</a>
+                <a href="shop.html" class="nav-link text-black font-semibold">Shop</a>
+                <a href="about.html" class="nav-link hover:text-black">About</a>
+                <a href="contact.html" class="nav-link hover:text-black">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-5">
+                <button class="text-gray-600 hover:text-black transition-colors" aria-label="Search">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <button class="text-gray-600 hover:text-black transition-colors" aria-label="User Account">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </button>
+                <button class="text-gray-600 hover:text-black transition-colors relative" aria-label="Shopping Cart">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute -top-2 -right-2 bg-black text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
+                </button>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 transform transition-transform duration-300 pt-24 px-6">
+        <div class="flex flex-col space-y-6 text-xl font-serif text-center">
+            <a href="index.html" class="text-gray-600 hover:text-black">Home</a>
+            <a href="shop.html" class="text-black font-semibold">Shop</a>
+            <a href="about.html" class="text-gray-600 hover:text-black">About</a>
+            <a href="contact.html" class="text-gray-600 hover:text-black">Contact</a>
+        </div>
+    </div>
+
+    <!-- Shop Header -->
+    <section class="pt-32 pb-12 bg-zenvra-50 text-center px-6">
+        <h1 class="text-4xl md:text-5xl font-serif mb-4 fade-in">The Collection</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto font-light fade-in" style="transition-delay: 100ms;">Discover our carefully curated selection of minimal apparel, luxury handbags, footwear, and exquisite lifestyle goods.</p>
+        
+        <!-- Filters -->
+        <div class="mt-12 flex flex-wrap justify-center gap-4 fade-in" style="transition-delay: 200ms;">
+            <button class="px-5 py-2 border-b-2 border-black text-black text-sm uppercase tracking-widest font-medium">All</button>
+            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Apparel</button>
+            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Handbags</button>
+            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Footwear</button>
+            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Lifestyle</button>
+        </div>
+    </section>
+
+    <!-- Shop Grid -->
+    <section class="py-16 px-6 md:px-12 bg-white min-h-screen">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
+            
+            <!-- Product 1: Clothing -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Minimalist Trench')">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_clothing_1773592287332.png" alt="ZENVRA Apparel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">Quick Add</button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">ZENVRA Aesthetic Wardrobe Collection</h3>
+                        <p class="text-sm text-gray-500 font-light">Neutral Tones</p>
+                    </div>
+                    <span class="font-medium">$120.00</span>
+                </div>
+            </div>
+
+            <!-- Product 2: Handbags -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Signature Leather Tote')" style="transition-delay: 100ms;">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_handbags_1773592761902.png" alt="ZENVRA Handbag" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">Quick Add</button>
+                    <!-- Tag -->
+                    <span class="absolute top-4 right-4 bg-zenvra-gold text-white text-[10px] px-2 py-1 uppercase tracking-widest font-bold">Bestseller</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">ZENVRA Signature Leather Handbag</h3>
+                        <p class="text-sm text-gray-500 font-light">Luxury Black</p>
+                    </div>
+                    <span class="font-medium">$345.00</span>
+                </div>
+            </div>
+
+            <!-- Product 3: Shoes -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Classic Sneakers')" style="transition-delay: 200ms;">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_shoes_1773592737558.png" alt="ZENVRA Footwear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">Quick Add</button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">ZENVRA Urban Minimalist Sneakers</h3>
+                        <p class="text-sm text-gray-500 font-light">White / Cream</p>
+                    </div>
+                    <span class="font-medium">$160.00</span>
+                </div>
+            </div>
+
+            <!-- Product 4: Mugs -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Ceramic Art Mug')">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_mugs_1773592320626.png" alt="ZENVRA Sublimation Mugs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">Quick Add</button>
+                    <!-- Tag -->
+                    <span class="absolute top-4 right-4 bg-black text-white text-[10px] px-2 py-1 uppercase tracking-widest font-bold">New</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">ZENVRA Sublimation Studio Mugs</h3>
+                        <p class="text-sm text-gray-500 font-light">Set of 2</p>
+                    </div>
+                    <span class="font-medium">$45.00</span>
+                </div>
+            </div>
+
+            <!-- Product 5: More Clothing -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Studio Essential Set')" style="transition-delay: 100ms;">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_clothing_1773592287332.png" alt="ZENVRA Promo" class="w-full h-full object-cover filter saturate-50 transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">Quick Add</button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">ZENVRA Studio Essential Set</h3>
+                        <p class="text-sm text-gray-500 font-light">Beige</p>
+                    </div>
+                    <span class="font-medium">$95.00</span>
+                </div>
+            </div>
+
+            <!-- Product 6: Hero feature -->
+            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Complete Look')" style="transition-delay: 200ms;">
+                <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
+                    <img src="assets/images/zenvra_hero_1773592263167.png" alt="ZENVRA Look" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-6 py-3 text-sm font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 w-max shadow-lg">View Lookbook</button>
+                    <!-- Tag -->
+                    <span class="absolute top-4 right-4 bg-zenvra-gold text-white text-[10px] px-2 py-1 uppercase tracking-widest font-bold">Exclusive</span>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-lg text-black mb-1">The Complete Urban Collection</h3>
+                        <p class="text-sm text-gray-500 font-light">Full Set Selection</p>
+                    </div>
+                    <span class="font-medium">$560.00</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Pagination -->
+        <div class="mt-20 flex justify-center fade-in">
+            <nav class="flex items-center space-x-2">
+                <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-200 text-gray-500 hover:border-black hover:text-black transition-colors">&larr;</a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center border border-black bg-black text-white">1</a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-200 text-gray-500 hover:border-black hover:text-black transition-colors">2</a>
+                <span class="w-10 h-10 flex items-center justify-center text-gray-500">...</span>
+                <a href="#" class="w-10 h-10 flex items-center justify-center border border-gray-200 text-gray-500 hover:border-black hover:text-black transition-colors">&rarr;</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 px-6 md:px-12 text-sm text-gray-500 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <img src="assets/images/zenvra_logo_1773592784141.png" alt="ZENVRA" class="h-8 mb-6 object-contain">
+                <p class="leading-relaxed mb-6 font-light text-gray-600">Premium apparel, exquisite accessories, and uniquely designed lifestyle pieces. Redefining modern luxury.</p>
+            </div>
+            
+            <div>
+                <h4 class="text-black font-semibold uppercase tracking-widest mb-6">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a href="shop.html?category=clothing" class="hover:text-black transition-colors">Apparel</a></li>
+                    <li><a href="shop.html?category=handbags" class="hover:text-black transition-colors">Handbags</a></li>
+                    <li><a href="shop.html?category=shoes" class="hover:text-black transition-colors">Footwear</a></li>
+                    <li><a href="shop.html?category=mugs" class="hover:text-black transition-colors">Lifestyle</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-black font-semibold uppercase tracking-widest mb-6">Explore</h4>
+                <ul class="space-y-4">
+                    <li><a href="about.html" class="hover:text-black transition-colors">Our Story</a></li>
+                    <li><a href="contact.html" class="hover:text-black transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-black font-semibold uppercase tracking-widest mb-6">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-100">
+            <p>&copy; 2026 ZENVRA. All rights reserved.</p>
+            <div class="mt-4 md:mt-0 space-x-4">
+                <a href="#" class="hover:text-black transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-black transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
