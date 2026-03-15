@@ -84,12 +84,12 @@
         <p class="text-gray-600 max-w-2xl mx-auto font-light fade-in" style="transition-delay: 100ms;">Discover our carefully curated selection of minimal apparel, luxury handbags, footwear, and exquisite lifestyle goods.</p>
         
         <!-- Filters -->
-        <div class="mt-12 flex flex-wrap justify-center gap-4 fade-in" style="transition-delay: 200ms;">
-            <button class="px-5 py-2 border-b-2 border-black text-black text-sm uppercase tracking-widest font-medium">All</button>
-            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Apparel</button>
-            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Handbags</button>
-            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Footwear</button>
-            <button class="px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Lifestyle</button>
+        <div id="filter-container" class="mt-12 flex flex-wrap justify-center gap-4 fade-in" style="transition-delay: 200ms;">
+            <button data-filter="all" class="filter-btn px-5 py-2 border-b-2 border-black text-black text-sm uppercase tracking-widest font-medium">All</button>
+            <button data-filter="clothing" class="filter-btn px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Apparel</button>
+            <button data-filter="handbags" class="filter-btn px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Handbags</button>
+            <button data-filter="shoes" class="filter-btn px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Footwear</button>
+            <button data-filter="mugs" class="filter-btn px-5 py-2 border-b-2 border-transparent hover:border-black text-gray-500 hover:text-black transition-colors text-sm uppercase tracking-widest font-medium">Lifestyle</button>
         </div>
     </section>
 
@@ -98,7 +98,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
             
             <!-- Product 1: Clothing -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Minimalist Trench')">
+            <div class="group fade-in cursor-pointer product-item" data-category="clothing" onclick="addToCart('ZENVRA Minimalist Trench')">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/clothing.png" alt="ZENVRA Apparel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -114,7 +114,7 @@
             </div>
 
             <!-- Product 2: Handbags -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Signature Leather Tote')" style="transition-delay: 100ms;">
+            <div class="group fade-in cursor-pointer product-item" data-category="handbags" onclick="addToCart('ZENVRA Signature Leather Tote')" style="transition-delay: 100ms;">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/handbags.png" alt="ZENVRA Handbag" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -132,7 +132,7 @@
             </div>
 
             <!-- Product 3: Shoes -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Classic Sneakers')" style="transition-delay: 200ms;">
+            <div class="group fade-in cursor-pointer product-item" data-category="shoes" onclick="addToCart('ZENVRA Classic Sneakers')" style="transition-delay: 200ms;">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/shoes.png" alt="ZENVRA Footwear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -148,7 +148,7 @@
             </div>
 
             <!-- Product 4: Mugs -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Ceramic Art Mug')">
+            <div class="group fade-in cursor-pointer product-item" data-category="mugs" onclick="addToCart('ZENVRA Ceramic Art Mug')">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/mugs.png" alt="ZENVRA Sublimation Mugs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -166,7 +166,7 @@
             </div>
 
             <!-- Product 5: More Clothing -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Studio Essential Set')" style="transition-delay: 100ms;">
+            <div class="group fade-in cursor-pointer product-item" data-category="clothing" onclick="addToCart('ZENVRA Studio Essential Set')" style="transition-delay: 100ms;">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/clothing.png" alt="ZENVRA Promo" class="w-full h-full object-cover filter saturate-50 transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -182,7 +182,7 @@
             </div>
 
             <!-- Product 6: Hero feature -->
-            <div class="group fade-in cursor-pointer" onclick="addToCart('ZENVRA Complete Look')" style="transition-delay: 200ms;">
+            <div class="group fade-in cursor-pointer product-item" data-category="clothing" onclick="addToCart('ZENVRA Complete Look')" style="transition-delay: 200ms;">
                 <div class="relative bg-gray-100 overflow-hidden mb-4 min-h-[400px]">
                     <img src="assets/images/hero.png" alt="ZENVRA Look" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
